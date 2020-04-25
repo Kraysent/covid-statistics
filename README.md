@@ -3,7 +3,7 @@
 Small statistics analysis and graphical representation of COVID-19 outbrake. 
 Data is recieved from: 
 1. https://github.com/CSSEGISandData/COVID-19 - World data (Johns Hopkins University)
-2. https://github.com/k0ka/covid19-russia-data - Russian data (No implemented yet) (стопкоронавирус.рф)
+2. https://github.com/k0ka/covid19-russia-data - Russian data (стопкоронавирус.рф)
 
 `csv.h` is file from https://github.com/ben-strasser/fast-cpp-csv-parser - header-only library for `*.csv` files reading.
 

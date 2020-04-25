@@ -2,11 +2,12 @@
 
 #include <string>
 
+// Class that representates region of specific country
 struct Region
 {
-    std::string Name;
-    double Latitude;
-    double Longitude;
+    std::string Name = "";
+    double Latitude = 0;
+    double Longitude = 0;
 
     bool operator<(const Region& region) const
     {

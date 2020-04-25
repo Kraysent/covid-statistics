@@ -6,6 +6,7 @@
 #include <iostream>
 #include <vector>
 
+// Class to work with dates needed in GlobalSituation 
 struct Date
 {
     int Year = 0;
@@ -15,12 +16,22 @@ struct Date
     static const std::vector<int> DAYS_IN_MONTHS;
 
     // This method returns different output compared to operator<<
-    std::string to_string() const
+    std::string to_string_MDY() const
     {
         std::stringstream ss;
         
         ss << std::setfill('0');
         ss << std::setw(2) << Month << '-' << std::setw(2) << Day << '-' << std::setw(4) << Year;
+        
+        return ss.str();
+    }
+
+    std::string to_string_YMD() const
+    {
+        std::stringstream ss;
+        
+        ss << std::setfill('0');
+        ss << std::setw(4) << Year << '-' << std::setw(2) << Month << '-' << std::setw(2) << Day;
         
         return ss.str();
     }

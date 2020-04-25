@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-//Confirms - Deaths - Recovers
+// Confirms - Deaths - Recovers
 struct CDR
 {
     int Confirmed = 0;
@@ -15,7 +15,8 @@ struct CDR
     int ActiveCases() { return Confirmed - Deaths - Recovered; }
     int CompletedCases() { return Deaths + Recovered; }
 
-    //Calculated as Deaths / (Deaths + Recovers) -- It is not real mortality rate!
+    // Calculated as Deaths / (Deaths + Recovers)
+    // Note that it is not medical mortality rate!
     double MortalityRate()
     {
         return (CompletedCases() == 0) ? 0 : static_cast<double>(Deaths) / CompletedCases();
