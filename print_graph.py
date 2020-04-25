@@ -6,7 +6,7 @@ import datetime as dt
 # in following - actual data
 
 filename = "output.data"
-delimeter = ','
+delimeter = '|'
 data = open(filename, "r")
 
 fields = []

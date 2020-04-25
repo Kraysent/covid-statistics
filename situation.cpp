@@ -11,7 +11,6 @@
 
 /* TODO:
  * - Add correct time substraction
- * - Add data for Russian regions
 */
 
 using namespace std;
@@ -28,7 +27,7 @@ GlobalSituation ReadData(const Date& date)
     Region region;
     CDR cdr;
 
-    // Read world data
+    // ------------- Read world data ------------- //
     io::CSVReader<7, io::trim_chars<' ', '\t'>, io::double_quote_escape<',', '"'>> w_reader(
         PATH_TO_WORLD_DATA + date.to_string_MDY() + ".csv");
 
@@ -49,7 +48,7 @@ GlobalSituation ReadData(const Date& date)
         output[country][region] += cdr;
     }
 
-    // Read Russian data
+    // ------------- Read Russian data ------------- //
     io::CSVReader<4, io::trim_chars<' ', '\t'>, io::double_quote_escape<',', '"'>> rus_reader(
         PATH_TO_RUSSIAN_DATA + date.to_string_YMD() + ".csv");
 
@@ -64,6 +63,7 @@ GlobalSituation ReadData(const Date& date)
     {
         if (region.Name == "Всего")
             continue;
+
         output["Russia"][region] += cdr;
     }
 
@@ -81,11 +81,10 @@ int main()
         gsVector.push_back(ReadData(d));
     }
 
-    UPLOAD_TO_FILE_4_ARGS("output.data", gsVector, GetDate(), 
-                          CountryCDR("Russia").ActiveCases(), 
-                          CountryCDR("Spain").ActiveCases(), 
-                          CountryCDR("Italy").ActiveCases(), 
-                          ',', true);
+    UPLOAD_TO_FILE_3_ARGS("output.data", gsVector, GetDate(), 
+                          CountryRegionCDR("Russia", "Москва").ActiveCases(),
+                          CountryRegionCDR("Russia", "Санкт-Петербург").ActiveCases(),
+                          '|', true);
 
     return 0;
 }

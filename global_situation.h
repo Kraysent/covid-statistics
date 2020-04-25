@@ -46,6 +46,19 @@ class GlobalSituation
         return sum_cdr;
     }
 
+    CDR CountryRegionCDR(const std::string& country, const std::string& region) const
+    {
+        if (_data.count(country) == 1)
+        {
+            if (_data.at(country).count(Region{region, 0, 0}))
+            {
+                return _data.at(country).at(Region{region, 0, 0});
+            }
+        }
+
+        return CDR();
+    }
+
     CDR WorldCDR() const
     {
         CDR sum_cdr;

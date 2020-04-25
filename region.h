@@ -13,4 +13,9 @@ struct Region
     {
         return Name < region.Name;
     }
+
+    bool operator==(const Region& region) const
+    {
+        return region.Name == Name;
+    }
 };
