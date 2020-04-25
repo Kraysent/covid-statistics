@@ -3,13 +3,12 @@
 #include <utility>
 #include <fstream>
 
-#include "csv.h"
-#include "date.h"
-#include "global_situation.h"
-#include "region.h"
-#include "cdr.h"
-#include "upload_to_file.h"
-#include "json.h"
+#include "classes/date.h"
+#include "classes/global_situation.h"
+#include "classes/region.h"
+#include "classes/cdr.h"
+#include "libs/csv.h"
+#include "libs/json.h"
 
 using namespace std;
 using json = nlohmann::json;
