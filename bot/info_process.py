@@ -1,7 +1,7 @@
 import json
 import datetime
 
-with open("outbreak.data", "r") as read_file:
+with open("../outbreak.data", "r") as read_file:
     data = json.load(read_file)
 
 date = datetime.datetime(data['date']['y'], data['date']['m'], data['date']['d'])

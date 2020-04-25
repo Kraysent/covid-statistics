@@ -3,7 +3,7 @@ data/
 
 # some directories
 .vscode/
-__pycache__/
+bot/__pycache__/
 
 # files fith data
 *.data
@@ -12,4 +12,4 @@ __pycache__/
 situation
 
 # sensetive info
-info.py
+bot/info.py
