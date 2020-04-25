@@ -11,5 +11,5 @@ bot/__pycache__/
 # executive files
 situation
 
-# sensetive info
+# sensitive info
 bot/info.py

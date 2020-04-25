@@ -1,5 +1,6 @@
 from info import token
 from info_process import get_actual_information
+from users import add_user
 import telebot
 
 bot = telebot.TeleBot(token)
@@ -48,6 +49,7 @@ def get_time(message):
 
     if (wait_for_time == True and is_time(message)):
         time = process_time(message)
+        add_user(message.chat.id, time[0], time[1])
         wait_for_time = False
         bot.send_message(message.chat.id, "Отлично, установлено время сообщений: " + str(time[0]) + ":" + str(time[1]) + "." +
             "\r\nНа данный момент актуальная информация: ")
