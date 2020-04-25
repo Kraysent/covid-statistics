@@ -1,11 +1,15 @@
 # directory with data (it could be downloaded with update_info.sh)
 data/
 
+# some directories
+.vscode/
+__pycache__/
+
 # files fith data
 *.data
 
 # executive files
 situation
 
-# vs code directory
-.vscode/
+# sensetive info
+info.py

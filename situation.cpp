@@ -73,7 +73,7 @@ GlobalSituation ReadData(const Date& date)
     return output;
 }
 
-void BotOutput(const Date& todayDate)
+void BotOutput(const Date& todayDate, const string& filename)
 {
     GlobalSituation today = ReadData(todayDate);
     GlobalSituation yesterday = ReadData(todayDate - 1);
@@ -115,7 +115,7 @@ void BotOutput(const Date& todayDate)
         }
     });
 
-    ofstream str("output1.data");
+    ofstream str(filename);
 
     str << j;
 
@@ -126,7 +126,7 @@ int main()
 {
     Date initialDate = {2020, 03, 21}, endDate = {2020, 04, 25}; 
     
-    BotOutput(endDate);
+    BotOutput(endDate, "outbreak.data");
 
     return 0;
 }
