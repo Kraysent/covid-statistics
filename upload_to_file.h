@@ -1,6 +1,6 @@
 #pragma once
 
-#include <iostream>
+#include <fstream>
 
 #define UPLOAD_TO_FILE_2_ARGS(filename, globalSituationArray, field1, field2, delimeter, print_headers) \
 { \

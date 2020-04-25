@@ -41,18 +41,34 @@ struct Date
         return {Year - d.Year, Month - d.Month, Day - d.Day};
     }
 
-    Date operator+(int i) const // it should be more complex!
+    // Transition threw year does not work (it is not needed)
+    Date operator+(int i) const
     {
         Date output = *this;
 
-        while (output.Day + i > DAYS_IN_MONTHS[Month - 1])
+        while (output.Day + i > DAYS_IN_MONTHS[output.Month - 1])
         {
-            i -= (DAYS_IN_MONTHS[Month - 1] - output.Day);
+            i -= (DAYS_IN_MONTHS[output.Month - 1] - output.Day);
             output.Day = 0;
-            output.Month++;
+            output.Month = (output.Month + 1) % 12;
         }
 
         return {output.Year, output.Month, output.Day + i};
+    }
+
+    // Transition threw year does not work (it is not needed)
+    Date operator-(int i) const
+    {
+        Date output = *this;
+
+        while (output.Day - i < 1)
+        {
+            i -= output.Day;
+            output.Day = DAYS_IN_MONTHS[(output.Month - 2) % 12];
+            output.Month = (output.Month - 1) % 12;
+        }
+
+        return {output.Year, output.Month, output.Day - i};
     }
 
     bool operator==(const Date& d) const
