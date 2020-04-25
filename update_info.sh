@@ -1,3 +1,9 @@
+if ! [ -d data ]; then
+    mkdir data
+fi
+
+cd data/
+
 if ! [ -d COVID-19 ]; then
     echo "COVID-19 folder does not exists. Cloning..."
     git clone https://github.com/CSSEGISandData/COVID-19.git

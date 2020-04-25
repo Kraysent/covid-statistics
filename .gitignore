@@ -1,0 +1,11 @@
+# directory with data (it could be downloaded with update_info.sh)
+data/
+
+# files fith data
+*.data
+
+# executive files
+situation
+
+# vs code directory
+.vscode/

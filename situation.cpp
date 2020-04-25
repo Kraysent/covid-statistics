@@ -17,8 +17,8 @@ using json = nlohmann::json;
  * - Add correct Date - Date substraction
 */
 
-const string PATH_TO_WORLD_DATA = "COVID-19/csse_covid_19_data/csse_covid_19_daily_reports/";
-const string PATH_TO_RUSSIAN_DATA = "covid19-russia-data/data/";
+const string PATH_TO_WORLD_DATA = "data/COVID-19/csse_covid_19_data/csse_covid_19_daily_reports/";
+const string PATH_TO_RUSSIAN_DATA = "data/covid19-russia-data/data/";
 // In this date Johns Hopkins University changed format of data. See code below.
 const Date CHANGE_FORMAT_DATE = {2020, 03, 22};
 
